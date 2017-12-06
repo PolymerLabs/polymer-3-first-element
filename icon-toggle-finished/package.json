@@ -1,0 +1,19 @@
+{
+  "name": "polymer-3-first-element",
+  "version": "1.0.0",
+  "flat": true,
+  "description": "Build your first element with Polymer 3!",
+  "main": "index.html",
+  "repository": "https://github.com/PolymerLabs/polymer-3-first-element.git",
+  "author": "Kate Jeffreys <katejeffreys@google.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.0-pre.1",
+    "@polymer/iron-icons": "^3.0.0-pre.1",
+    "@polymer/polymer": "^3.0.0-pre.1",
+    "@webcomponents/webcomponentsjs": "^1.0.20"
+  },
+  "resolutions": {
+    "@webcomponents/webcomponentsjs": "1.0.20"
+  }
+}
