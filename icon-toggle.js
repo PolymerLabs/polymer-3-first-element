@@ -1,14 +1,8 @@
-import {Element as PolymerElement} from "../node_modules/@polymer/polymer/polymer-element.js"
-import "../node_modules/@polymer/iron-icon/iron-icon.js"
-
-//export const html = Polymer.html;
-
-export const html = (strings, ...values) => strings[0]
-+ values.map((v, i) => v + strings[i+1]).join('');
+import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/iron-icon/iron-icon.js';
 
 class IconToggle extends PolymerElement {
-  
-  static get properties () {
+  static get properties() {
     return {
       pressed: {
         type: Boolean,
@@ -21,20 +15,9 @@ class IconToggle extends PolymerElement {
       },
     };
   }
-  
-  constructor() {
-    super();
-    this.addEventListener('click', this.toggle.bind(this));
-  }
-  
-  toggle() {
-    this.pressed = !this.pressed;
-  }
-
-  static get template () {
+  static get template() {
     return html`
       <style>
-        /* local styles go here */
         :host {
           display: inline-block;
         }
@@ -46,11 +29,15 @@ class IconToggle extends PolymerElement {
           fill: var(--icon-toggle-pressed-color, currentcolor);
         }
       </style>
-        
-      <!-- shadow DOM goes here -->
-      <iron-icon icon="[[toggleIcon]]">
-      </iron-icon>
-    `
+      <iron-icon icon="[[toggleIcon]]"></iron-icon>
+    `;
+  }
+  constructor() {
+    super();
+    this.addEventListener('click', this.toggle.bind(this));
+  }
+  toggle() {
+    this.pressed = !this.pressed;
   }
 }
 
