@@ -8,16 +8,13 @@ class DemoElement extends PolymerElement {
       <style>
         :host {
           font-family: sans-serif;
-          --icon-toggle-color: lightgrey;
-          --icon-toggle-outline-color: black;
-          --icon-toggle-pressed-color: red;
         }
       </style>
-  
+      
       <h3>Statically-configured icon-toggles</h3>
       <icon-toggle toggle-icon="star"></icon-toggle>
       <icon-toggle toggle-icon="star" pressed></icon-toggle>
-    
+        
       <h3>Data-bound icon-toggle</h3>
       <!-- use a computed binding to generate the message -->
       <div><span>[[_message(isFav)]]</span></div>
