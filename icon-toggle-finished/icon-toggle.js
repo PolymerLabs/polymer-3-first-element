@@ -2,23 +2,9 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/iron-icon/iron-icon.js';
 
 class IconToggle extends PolymerElement {
-  static get properties() {
-    return {
-      pressed: {
-        type: Boolean,
-        notify: true,
-        reflectToAttribute: true,
-        value: false
-      },
-      toggleIcon: {
-        type: String
-      },
-    };
-  }
   static get template() {
     return html`
       <style>
-        /* local styles go here */
         :host {
           display: inline-block;
         }
@@ -30,8 +16,22 @@ class IconToggle extends PolymerElement {
           fill: var(--icon-toggle-pressed-color, currentcolor);
         }
       </style>
+      <!-- shadow DOM goes here -->
       <iron-icon icon="[[toggleIcon]]"></iron-icon>
     `;
+  }
+  static get properties () {
+    return {
+      toggleIcon: {
+        type: String
+      },
+      pressed: {
+        type: Boolean,
+        notify: true,
+        reflectToAttribute: true,
+        value: false
+      }
+    };
   }
   constructor() {
     super();
@@ -41,4 +41,5 @@ class IconToggle extends PolymerElement {
     this.pressed = !this.pressed;
   }
 }
+
 customElements.define('icon-toggle', IconToggle);
