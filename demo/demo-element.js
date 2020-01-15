@@ -18,7 +18,7 @@ class DemoElement extends PolymerElement {
       <h3>Data-bound icon-toggle</h3>
       <!-- use a computed binding to generate the message -->
       <div><span>[[_message(isFav)]]</span></div>
-      <!-- curly brackets ({{}}} allow two-way binding --> 
+      <!-- curly brackets ({{}}) allow two-way binding --> 
       <icon-toggle toggle-icon="favorite" pressed="{{isFav}}"></icon-toggle>
     `;
   }
